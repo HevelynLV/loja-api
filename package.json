@@ -9,6 +9,9 @@
     "test": "jest --coverage",
     "lint": "eslint src/**/*.js tests/**/*.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HevelynLV/loja-api.git"
@@ -26,10 +29,12 @@
     "mongoose": "^9.7.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
     "@eslint/js": "^9.39.4",
     "@eslint/json": "^2.0.0",
     "eslint": "^10.4.1",
     "jest": "^30.4.2",
     "nodemon": "^3.1.14"
   }
+}
 }
