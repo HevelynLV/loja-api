@@ -11,8 +11,8 @@ app.use(express.json());
 // Rota inicial
 app.get('/', (req, res) => {
   res.json({
-    message: 'O teste funcionou!'
-  });
+    message: 'Oi prof. O teste deu certo.'
+});
 });
 
 // Importação das rotas
