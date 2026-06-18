@@ -3,10 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - "**"
+      - develop
+      - "feature/**"
+
   pull_request:
     branches:
-      - "**"
+      - develop
 
 jobs:
   test:
@@ -31,7 +33,6 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      # === MODIFICADO: Usando http-server para servir a pasta selenium-front na porta 3001 ===
       - name: Start Front-End Server
         run: |
           npm install -g http-server
