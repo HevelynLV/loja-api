@@ -1,7 +1,7 @@
-jest.mock('../src/models/Customer');
+jest.mock('../src/models/customer');
 jest.mock('../src/config/database', () => jest.fn());
 
-const Customer = require('../src/models/Customer');
+const Customer = require('../src/models/customer');
 const customerController = require('../src/controllers/customerController');
 
 const mockReq = (params = {}, body = {}) => ({ params, body });
