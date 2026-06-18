@@ -31,10 +31,12 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      # === ADICIONADO: Liga a API antes de rodar os testes ===
-      - name: Start Server in Background
+      # === MODIFICADO: Usando http-server para servir a pasta selenium-front na porta 3001 ===
+      - name: Start Front-End Server
         run: |
-          node app.js &
+          npm install -g http-server
+          http-server . -p 3001 &
           sleep 5
+
       - name: Run Jest tests
         run: npm test
