@@ -11,7 +11,7 @@ app.use(express.json());
 // Rota inicial
 app.get('/', (req, res) => {
   res.json({
-    message: 'O teste funcionou!'
+    message: 'TESTANDO :)'
   });
 });
 
