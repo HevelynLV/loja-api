@@ -192,13 +192,59 @@ npm run lint:fix
 
 ---
 
+## Teste de Interface com Selenium
+
+O projeto possui um teste automatizado de interface utilizando Selenium WebDriver.
+
+### Executar o teste Selenium
+
+1. Inicie o Live Server na pasta `selenium-front`.
+2. Certifique-se de que a página esteja acessível em:
+
+http://127.0.0.1:3001/selenium-front/pagina.html
+
+3. Execute o teste:
+
+```bash
+npx jest tests/selenium.test.js --no-cache
+```
+
+### Resultado esperado
+
+```text
+PASS tests/selenium.test.js
+
+Teste de Interface
+✓ Deve carregar a página inicial
+```
+
+### O que é validado
+
+- Abertura automática do navegador Chrome.
+- Acesso à página HTML da aplicação.
+- Localização do elemento `id="titulo"`.
+- Validação do texto "Loja API".
+
+## Executando Todos os Testes
+
+```bash
+npm test
+```
+
+Resultado esperado:
+
+```text
+Test Suites: 4 passed, 4 total
+Tests: 28 passed, 28 total
+```
+
 ## 👥 Integrantes do Grupo
 
-- Nome 1
-- Nome 2
-- Nome 3
-- Nome 4
-- Nome 5
+- Hevelyn Leivas
+- Isadora Custódio Lopes
+- Maisa Carolliny Grundler
+- Gabriel Mascia
+- Tais Capile
 
 ---
 
