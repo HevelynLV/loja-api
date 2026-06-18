@@ -1,11 +1,10 @@
-const { Builder, By } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome'); // <-- 1. Adicionado para configurar o Chrome
+const { Builder, By, until } = require('selenium-webdriver'); // <-- Importado 'until' para a espera
+const chrome = require('selenium-webdriver/chrome');
 
 describe('Teste de Interface', () => {
   let driver;
 
   beforeAll(async () => {
-    // 2. Configura o Chrome para rodar em modo oculto (Headless) no GitHub Actions
     let options = new chrome.Options();
     options.addArguments('--headless=new'); 
     options.addArguments('--no-sandbox');
@@ -13,9 +12,9 @@ describe('Teste de Interface', () => {
 
     driver = await new Builder()
       .forBrowser('chrome')
-      .setChromeOptions(options) // <-- 3. Passa as configurações para o navegador
+      .setChromeOptions(options)
       .build();
-  }, 30000);
+  }, 60000);
 
   afterAll(async () => {
     if (driver) {
@@ -26,8 +25,14 @@ describe('Teste de Interface', () => {
   test('Deve carregar a página inicial', async () => {
     await driver.get('http://127.0.0.1:3001/selenium-front/pagina.html');
 
-    const titulo = await driver.findElement(By.id('titulo'));
+    // === MODIFICADO: Espera até 10 segundos para o elemento com ID 'titulo' aparecer na tela ===
+    const tituloElement = await driver.wait(
+      until.elementLocated(By.id('titulo')),
+      10000,
+      'O elemento com id "titulo" não foi encontrado a tempo na página.'
+    );
 
-    expect(await titulo.getText()).toBe('Loja API');
+    // Garante que o texto está correto
+    expect(await tituloElement.getText()).toBe('Loja API');
   }, 60000);
 });
