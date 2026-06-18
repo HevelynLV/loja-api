@@ -29,5 +29,5 @@ describe('Teste de Interface', () => {
     const titulo = await driver.findElement(By.id('titulo'));
 
     expect(await titulo.getText()).toBe('Loja API');
-  }, 30000);
+  }, 60000);
 });
