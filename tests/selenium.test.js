@@ -6,7 +6,7 @@ describe('Teste de Interface', () => {
 
   beforeAll(async () => {
     let options = new chrome.Options();
-    // options.addArguments('--headless=new'); 
+    //options.addArguments('--headless=new'); 
     options.addArguments('--no-sandbox');
     options.addArguments('--disable-dev-shm-usage');
 
@@ -23,7 +23,7 @@ describe('Teste de Interface', () => {
   });
 
   test('Deve carregar a página inicial', async () => {
-    await driver.get('http://127.0.0.1:3001/selenium-front/pagina.html');
+    await driver.get('http://127.0.0.1:8080/selenium-front/pagina.html');
 
     // === MODIFICADO: Espera até 10 segundos para o elemento com ID 'titulo' aparecer na tela ===
     const tituloElement = await driver.wait(
